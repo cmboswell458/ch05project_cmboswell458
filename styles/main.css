@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.required {
+    border: 2px solid orange;
+}
+
+.invalid-email {
+    border: 2px solid red;
+}
+
+#missing-count {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: red;
+}
