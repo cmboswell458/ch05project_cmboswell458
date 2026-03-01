@@ -1,4 +1,9 @@
 /*
+Name: Crystal Michelle Boswell
+Date: March 1, 2026
+Project: Form Validation Project
+*/
+/*
 <p>
 The checkMissing() function checks all elements with the class "required".
 If any required fields are empty, it counts them and updates the span
