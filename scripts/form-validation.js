@@ -3,16 +3,18 @@ Name: Crystal Michelle Boswell
 Date: March 1, 2026
 Project: Form Validation Project
 */
+
 /*
 <p>
-The checkMissing() function checks all elements with the class "required".
-If any required fields are empty, it counts them and updates the span
-with the id "missing-count". It returns true if missing fields exist.
+The checkMissing() function loops through all elements with the class
+"required" and checks whether they are empty. It counts the number of
+missing fields and updates the span with the id "missing-count".
+The function returns true if any required fields are missing.
 </p>
 */
 
 function checkMissing() {
-    let requiredFields = document.querySelectorAll(".required");
+    const requiredFields = document.querySelectorAll(".required");
     let missing = 0;
 
     requiredFields.forEach(function(field) {
@@ -21,7 +23,7 @@ function checkMissing() {
         }
     });
 
-    let messageSpan = document.getElementById("missing-count");
+    const messageSpan = document.getElementById("missing-count");
 
     if (missing > 0) {
         messageSpan.textContent = missing + " required field(s) are missing.";
@@ -34,18 +36,20 @@ function checkMissing() {
 
 /*
 <p>
-The validateEmail() function checks whether the email input contains
-at least 8 characters. If the email is invalid, it adds the
-"invalid-email" class to highlight the field in red.
-If valid, it removes the red border and restores the normal required styling.
-It returns true if the email is invalid.
+The validateEmail() function checks whether the email field
+contains at least 8 characters. If the email is invalid,
+the function adds the "invalid-email" class to highlight
+the field with a red border. If valid, it removes the
+"invalid-email" class and restores normal styling.
+The function returns true if the email is invalid.
 </p>
 */
 
 function validateEmail() {
-    let emailField = document.getElementById("email");
+    const emailField = document.getElementById("email");
+    const emailValue = emailField.value.trim();
 
-    if (emailField.value.length < 8) {
+    if (emailValue.length < 8) {
         emailField.classList.add("invalid-email");
         return true;
     } else {
@@ -56,17 +60,18 @@ function validateEmail() {
 
 /*
 <p>
-The combinedValidation() function runs both checkMissing()
-and validateEmail(). If either function returns true,
-form submission is blocked and an alert is displayed.
+The runValidation() function combines both checkMissing()
+and validateEmail(). If either function detects an error,
+form submission is blocked and an alert message is shown.
+If no errors exist, a success alert is displayed.
 </p>
 */
 
-function combinedValidation() {
-    let missingFields = checkMissing();
-    let invalidEmail = validateEmail();
+function runValidation() {
+    const hasMissing = checkMissing();
+    const emailInvalid = validateEmail();
 
-    if (missingFields || invalidEmail) {
+    if (hasMissing || emailInvalid) {
         alert("Form submission blocked. Please complete all required fields correctly.");
     } else {
         alert("Form submitted successfully!");
@@ -76,6 +81,6 @@ function combinedValidation() {
 /* Event Listener */
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("submit-btn")
-        .addEventListener("click", combinedValidation);
+    const submitButton = document.getElementById("submit-btn");
+    submitButton.addEventListener("click", runValidation);
 });

@@ -4,15 +4,17 @@ Name: Crystal Michelle Boswell
 Date: March 1, 2026
 Project: Form Validation Project
 -->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Page</title>
 
-    <!-- Link to CSS -->
+    <!-- Link to External Stylesheet -->
     <link rel="stylesheet" href="styles/main.css">
 
-    <!-- Link to JavaScript -->
+    <!-- Link to External JavaScript -->
     <script src="scripts/form-validation.js" defer></script>
 </head>
 
@@ -31,25 +33,36 @@ Project: Form Validation Project
 </nav>
 
 <main>
+
     <h2>Contact Form</h2>
 
     <form id="contact-form">
 
         <label for="fullname">Full Name:</label>
-        <input type="text" id="fullname" class="required">
+        <input type="text"
+               id="fullname"
+               name="fullname"
+               class="required">
 
         <label for="email">Email:</label>
-        <input type="email" id="email" class="required">
+        <input type="email"
+               id="email"
+               name="email"
+               class="required">
 
         <label for="reason">Reason for Contact:</label>
-        <select id="reason" class="required">
+        <select id="reason"
+                name="reason"
+                class="required">
             <option value="">--Select an Option--</option>
             <option value="question">Question</option>
             <option value="support">Support</option>
             <option value="feedback">Feedback</option>
         </select>
 
-        <input type="button" value="Submit" id="submit-btn">
+        <input type="button"
+               value="Submit"
+               id="submit-btn">
 
     </form>
 

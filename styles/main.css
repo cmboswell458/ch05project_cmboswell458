@@ -3,6 +3,11 @@ Name: Crystal Michelle Boswell
 Date: March 1, 2026
 Project: Form Validation Project
 */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
@@ -11,11 +16,8 @@ body {
 nav ul {
     list-style: none;
     padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 15px;
+    display: flex;
+    gap: 15px;
 }
 
 .required {
@@ -24,6 +26,19 @@ nav ul li {
 
 .invalid-email {
     border: 2px solid red;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+select {
+    display: block;
+    margin-bottom: 10px;
+    padding: 6px;
+    width: 250px;
 }
 
 #missing-count {
